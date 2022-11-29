@@ -29,8 +29,7 @@ public class Cliente {
 	@Column
 	private String telefone;
 	
-	@OneToMany
-	@JoinColumn(name = "cliente_id", referencedColumnName = "id")
+	@OneToMany(mappedBy = "cliente")
 	private List<Pet> pets;
 	
 	//one to many para a tabela atendimento

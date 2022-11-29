@@ -1,0 +1,78 @@
+Cliente
+{
+	"cpf":"12345678911",
+	"nome":"cliente 1",
+	"telefone":"61 91234-5678"
+}
+
+
+PET
+{
+	"nome":"rex",
+	"raca":"vira-lata",
+	"tipo":"cachorro"
+}
+
+Funcionario
+{
+	"cpf":"12345678911",
+	"nome":"cliente 1",
+	"ctps":"61 91234-5678"
+}
+
+Orçamento
+{
+	"valor":"30.00"
+}
+
+serviço
+{
+	"nome":"cliente 1",
+	"preco":"40.00"
+}
+
+Atendimento
+{}	
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Edição
+Cliente
+{
+	"id":"1",
+	"cpf":"12345678911",
+	"nome":"cliente 1",
+	"telefone":"61 91234-5678"
+}
+
+
+PET
+{
+	"id":"1",
+	"nome":"rex",
+	"raca":"vira-lata",
+	"tipo":"cachorro"
+}
+
+Funcionario
+{
+	"id":"1",
+	"cpf":"12345678911",
+	"nome":"cliente 1",
+	"ctps":"61 91234-5678"
+}
+
+Orçamento
+{
+	"id":"1",
+	"valor":"30.00"
+}
+
+serviço
+{
+	"id":"1",
+	"nome":"cliente 1",
+	"preco":"40.00"
+}
+
+Atendimento
+{}	
