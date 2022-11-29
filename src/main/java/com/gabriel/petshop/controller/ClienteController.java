@@ -48,12 +48,12 @@ public class ClienteController{
 
 		
 		//Buscando cliente por Id
-		@GetMapping("/{id}")
-		public ResponseEntity<Cliente> findById(@PathVariable Long id) {
-			return clienteRepository.findById(id)
-					.map(record -> ResponseEntity.ok().body(record))
-					.orElse(ResponseEntity.notFound().build());
-		}
+		// @GetMapping("/{id}")
+		// public ResponseEntity<Cliente> findById(@PathVariable Long id) {
+		// 	return clienteRepository.findById(id)
+		// 			.map(record -> ResponseEntity.ok().body(record))
+		// 			.orElse(ResponseEntity.notFound().build());
+		// }
 		
 		//Adicioanando Cliente
 		@PostMapping
@@ -95,5 +95,18 @@ public class ClienteController{
 			}).orElse(ResponseEntity.notFound().build());
 					
 		}*/
+
+		@GetMapping("/{id}")
+		public ResponseEntity<Cliente> findById(@PathVariable Long id, 
+			@RequestBody Cliente cliente) {
+			return clienteRepository.findById(id)
+					.map(recordFound -> {
+					recordFound.setId(cliente.getId());
+					recordFound.setNome(cliente.getNome());
+					recordFound.setCpf(cliente.getCpf());
+					recordFound.setTelefone(cliente.getTelefone());
+					return ResponseEntity.ok().body(recordFound);
+					}).orElse(ResponseEntity.notFound().build());
+		}
 	
 }

@@ -17,7 +17,7 @@ import lombok.Data;
 public class Atendimento {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id; 
 	
 	//many to one

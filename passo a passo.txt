@@ -1,0 +1,25 @@
+Para roda a API é necessário ter instalado o Java 17, e o Maven Versão 3.8.6 ou superior
+
+(caso nao tenha o maven https://www.youtube.com/watch?v=-ucX5w8Zm8s)
+(caso nao tenha o java https://www.youtube.com/watch?v=QekeJBShCy4)
+
+Depois utilizar o spring para rodar a aplicação pode ser tanto pelas extensões dos editores de texto ou pela própria ferramenta spring tool suite (basta apenas descompactar a pasta e executar o arquivo .jar e importar o projeto maven)
+
+Por fim basta executar a aplicação
+
+para acessar o banco basta acessar o "http://localhost:8080/h2-console/" com a senha "password", também é necessário configurar jdbc url nas opções do h2 sendo ele:"jdbc:h2:mem:testdb" tudo isso está no arquivo "application.properties" em resources
+
+se não estiver na pagina inicial, os diretórios das tabelas são http://localhost:8080/api/"nome da tabela"
+
+http://localhost:8080/api/cliente
+http://localhost:8080/api/pet	
+http://localhost:8080/api/funcionario
+http://localhost:8080/api/atendimento
+http://localhost:8080/api/orcamento
+http://localhost:8080/api/servico
+
+
+junto do repositório tem um outro arquivo chamado petshop.txt que possui alguns exemplos de include para cada tabela, que podem ser feito a partir do postman ou thunderclient,
+só para resaltar, as edições devem ser feitas passando o id no jason, e delete passando o id na url  
+
+

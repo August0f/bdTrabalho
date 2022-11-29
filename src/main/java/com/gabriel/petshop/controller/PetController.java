@@ -33,12 +33,12 @@ public class PetController {
 			return petRepository.findAll();
 		}
 		
-		@GetMapping("/{id}")
-		public ResponseEntity<Pet> findById(@PathVariable Long id) {
-			return petRepository.findById(id)
-					.map(record -> ResponseEntity.ok().body(record))
-					.orElse(ResponseEntity.notFound().build());
-		}
+		// @GetMapping("/{id}")
+		// public ResponseEntity<Pet> findById(@PathVariable Long id) {
+		// 	return petRepository.findById(id)
+		// 			.map(record -> ResponseEntity.ok().body(record))
+		// 			.orElse(ResponseEntity.notFound().build());
+		// }
 		
 		@PostMapping
 		@ResponseStatus(code = HttpStatus.CREATED)
@@ -62,4 +62,17 @@ public class PetController {
 			.orElse(ResponseEntity.notFound().build());
 		}
 
+		@GetMapping("/{id}")
+		public ResponseEntity<Pet> findById(@PathVariable Long id, 
+			@RequestBody Pet pet) {
+			return petRepository.findById(id)
+					.map(recordFound -> {
+					recordFound.setId(pet.getId());
+					recordFound.setNome(pet.getNome());
+					recordFound.setRaca(pet.getRaca());
+					recordFound.setTipo(pet.getTipo());
+					Pet js = petRepository.save(recordFound);
+					return ResponseEntity.ok().body(recordFound);
+					}).orElse(ResponseEntity.notFound().build());
+		}
 }
